@@ -1,4 +1,4 @@
-package com.example.legacyhospitalsystem.model;
+package com.example.legacyhospitalsystem.client;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;

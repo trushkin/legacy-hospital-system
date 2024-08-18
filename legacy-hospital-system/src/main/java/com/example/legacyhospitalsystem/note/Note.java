@@ -1,11 +1,8 @@
-package com.example.legacyhospitalsystem.model;
+package com.example.legacyhospitalsystem.note;
 
-import com.example.legacyhospitalsystem.model.Client;
+import com.example.legacyhospitalsystem.client.Client;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
@@ -15,11 +12,12 @@ import java.time.LocalDateTime;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class Note {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
-    private String Comments;
+    private String comments;
     private String guid;
     @Column(name = "modified_datetime")
     private LocalDateTime modifiedDateTime;

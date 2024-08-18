@@ -1,4 +1,4 @@
-package com.example.legacyhospitalsystem.model;
+package com.example.legacyhospitalsystem.client;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
