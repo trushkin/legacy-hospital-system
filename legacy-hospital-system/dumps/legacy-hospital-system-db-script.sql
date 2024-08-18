@@ -26,3 +26,135 @@ create table if not exists notes (
 );
 ALTER TABLE notes
 ADD CONSTRAINT fk_notes_to_client_guid FOREIGN KEY (client_guid) REFERENCES clients(guid);
+
+---
+
+INSERT INTO clients (agency, guid, first_name, last_name, status, dob, created_date_time)
+VALUES
+    ('vhh4', '01588E84-D45A-EB98-F47F-716073A4F1EF', 'Ne', 'Abr', 'INACTIVE', '1999-10-15', '2021-11-15 11:51:59'),
+    ('agency1', 'C5DCAA49-ADE5-E65C-B776-3F6D7B5F2055', 'John', 'Doe', 'ACTIVE', '1985-08-21', '2021-11-10 09:22:34'),
+    ('agency2', 'A2C3D4F6-G7H8-I9J0-K1L2-M3N4O5P6Q7R8', 'Jane', 'Smith', 'ACTIVE', '1992-03-05', '2021-11-20 15:40:23'),
+    ('agency3', 'B3D4E5F6-H7I8-J9K0-L1M2-N3O4P5Q6R7S8', 'Alice', 'Johnson', 'INACTIVE', '1975-12-11', '2021-11-22 08:15:45'),
+    ('agency4', 'C4D5E6F7-I8J9-K0L1-M2N3-O4P5Q6R7S8T9', 'Bob', 'Brown', 'ACTIVE', '2000-06-17', '2021-11-25 12:30:30');
+
+INSERT INTO notes (comments, guid, modified_datetime, client_guid, datetime, logged_user, created_datetime)
+VALUES
+    ('Patient Care Coordinator, reached out to patient caregiver is still in the hospital.',
+     '20CBCEDA-3764-7F20-0BB6-4D6DD46BA9F8',
+     '2021-11-15 11:51:59',
+     'C5DCAA49-ADE5-E65C-B776-3F6D7B5F2055',
+     '2021-09-16 12:02:26',
+     'p.vasya',
+     '2021-11-15 11:51:59'),
+
+    ('Follow-up note after patient consultation.',
+     'A1234F87-1234-4C56-B789-1234567890AB',
+     '2021-11-17 09:00:00',
+     '01588E84-D45A-EB98-F47F-716073A4F1EF',
+     '2021-11-16 14:30:00',
+     'd.jane',
+     '2021-11-17 09:00:00'),
+
+    ('Discussed treatment plan with client.',
+     'B2345F89-5678-4C9B-A123-4567890BCDEF',
+     '2021-11-18 10:20:45',
+     'A2C3D4F6-G7H8-I9J0-K1L2-M3N4O5P6Q7R8',
+     '2021-11-18 10:00:00',
+     'n.alex',
+     '2021-11-18 10:20:45'),
+
+    ('Scheduled next appointment.',
+     'C3456G90-6789-4DEF-B456-67890ABCDE12',
+     '2021-11-19 14:35:12',
+     'B3D4E5F6-H7I8-J9K0-L1M2-N3O4P5Q6R7S8',
+     '2021-11-19 14:30:00',
+     'm.sasha',
+     '2021-11-19 14:35:12'),
+
+    ('Followed up on recent lab results.',
+     'D4567H01-7890-4EFG-C567-7890ABCDEF23',
+     '2021-11-20 11:45:33',
+     'C4D5E6F7-I8J9-K0L1-M2N3-O4P5Q6R7S8T9',
+     '2021-11-20 11:40:00',
+     'o.vlad',
+     '2021-11-20 11:45:33'),
+
+    ('Patient reported improved symptoms.',
+     'E5678I12-8901-5F01-D678-8901BCDE3456',
+     '2021-11-21 13:55:12',
+     'C5DCAA49-ADE5-E65C-B776-3F6D7B5F2055',
+     '2021-11-21 13:50:00',
+     'q.peter',
+     '2021-11-21 13:55:12'),
+
+    ('Discussed potential side effects of medication.',
+     'F6789J23-9012-5G12-E789-9012CDEF4567',
+     '2021-11-22 16:00:22',
+     '01588E84-D45A-EB98-F47F-716073A4F1EF',
+     '2021-11-22 15:55:00',
+     'r.kate',
+     '2021-11-22 16:00:22'),
+
+    ('Reviewed patient history.',
+     'G7890K34-0123-6H23-F890-1234DEFG5678',
+     '2021-11-23 09:15:47',
+     'A2C3D4F6-G7H8-I9J0-K1L2-M3N4O5P6Q7R8',
+     '2021-11-23 09:10:00',
+     's.lucas',
+     '2021-11-23 09:15:47'),
+
+    ('Discussed lifestyle changes with patient.',
+     'H8901L45-1234-6I34-G901-2345EFGH6789',
+     '2021-11-24 11:25:31',
+     'B3D4E5F6-H7I8-J9K0-L1M2-N3O4P5Q6R7S8',
+     '2021-11-24 11:20:00',
+     't.alex',
+     '2021-11-24 11:25:31'),
+
+    ('Scheduled follow-up appointment.',
+     'I9012M56-2345-7J45-H012-3456FGHI7890',
+     '2021-11-25 10:30:44',
+     'C4D5E6F7-I8J9-K0L1-M2N3-O4P5Q6R7S8T9',
+     '2021-11-25 10:25:00',
+     'u.maria',
+     '2021-11-25 10:30:44'),
+
+    ('Patient expressed concerns about treatment.',
+     'J0123N67-3456-8K56-I123-4567GHIJ8901',
+     '2021-11-26 14:00:00',
+     'C5DCAA49-ADE5-E65C-B776-3F6D7B5F2055',
+     '2021-11-26 13:55:00',
+     'v.julia',
+     '2021-11-26 14:00:00'),
+
+    ('Reviewed test results with patient.',
+     'K1234O78-4567-9L67-J234-5678HIJK9012',
+     '2021-11-27 15:10:12',
+     '01588E84-D45A-EB98-F47F-716073A4F1EF',
+     '2021-11-27 15:05:00',
+     'w.sophie',
+     '2021-11-27 15:10:12'),
+
+    ('Updated patient record.',
+     'L2345P89-5678-0M78-K345-6789IJKL0123',
+     '2021-11-28 12:45:00',
+     'A2C3D4F6-G7H8-I9J0-K1L2-M3N4O5P6Q7R8',
+     '2021-11-28 12:40:00',
+     'x.oliver',
+     '2021-11-28 12:45:00'),
+
+    ('Discussed lab results with patient.',
+     'M3456Q90-6789-1N89-L456-7890JKLM1234',
+     '2021-11-29 14:20:30',
+     'B3D4E5F6-H7I8-J9K0-L1M2-N3O4P5Q6R7S8',
+     '2021-11-29 14:15:00',
+     'y.daniel',
+     '2021-11-29 14:20:30'),
+
+    ('Patient agreed to new treatment plan.',
+     'N4567R01-7890-2O90-M567-8901JKLM2345',
+     '2021-11-30 10:10:10',
+     'C4D5E6F7-I8J9-K0L1-M2N3-O4P5Q6R7S8T9',
+     '2021-11-30 10:05:00',
+     'z.emma',
+     '2021-11-30 10:10:10');
