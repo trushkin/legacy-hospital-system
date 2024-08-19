@@ -18,7 +18,7 @@ import java.time.LocalDateTime;
 public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long Id;
+    private Long id;
     private String agency;
     @Column(name = "guid")
     private String guid;
